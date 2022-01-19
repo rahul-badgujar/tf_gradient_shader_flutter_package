@@ -13,12 +13,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         body: TfGradientShadedWidget(
-          child: Container(
-            height: 100,
-            width: 100,
-            child: CircleAvatar(
-              radius: 100,
-            ),
+          child: CircleAvatar(
+            radius: 100,
           ),
           offsetFrom: const Offset(0, 24),
           offsetTo: const Offset(24, 0),
