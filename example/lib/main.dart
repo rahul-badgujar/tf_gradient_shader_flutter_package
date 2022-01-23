@@ -25,11 +25,7 @@ class Home extends StatelessWidget {
     Color.fromARGB(255, 66, 55, 143)
   ];
 
-  final demoColorStops = const <double>[
-    0.0,
-    0.3,
-    0.8,
-  ];
+  final demoColorStops = const <double>[0.0, 0.3, 0.8];
 
   @override
   Widget build(BuildContext context) {

@@ -48,8 +48,12 @@ TfLinearGradientShader(
     ),
     offsetFrom: const Offset(0, 0),
     offsetTo: const Offset(130, 130),
-    colors: demoColors,
-    colorStops: demoColorStops,
+    colors: const <Color>[
+        Color.fromARGB(255, 245, 56, 68),
+        Color.fromARGB(255, 212, 65, 142),
+        Color.fromARGB(255, 66, 55, 143)
+    ],
+    colorStops: const <double>[0.0, 0.3, 0.8],
     blendMode: BlendMode.modulate,
     tileMode: TileMode.clamp,
 ),
@@ -79,8 +83,12 @@ TfRadialGradientShader(
       ],
     ),
     center: const Offset(80, 80),
-    colors: demoColors,
-    colorStops: demoColorStops,
+    colors: const <Color>[
+        Color.fromARGB(255, 245, 56, 68),
+        Color.fromARGB(255, 212, 65, 142),
+        Color.fromARGB(255, 66, 55, 143)
+    ],
+    colorStops: const <double>[0.0, 0.3, 0.8],
     blendMode: BlendMode.modulate,
     tileMode: TileMode.clamp,
     radius: 80,
@@ -111,8 +119,12 @@ TfSweepGradientShader(
       ],
     ),
     center: const Offset(100, 80),
-    colors: demoColors,
-    colorStops: demoColorStops,
+    colors: const <Color>[
+        Color.fromARGB(255, 245, 56, 68),
+        Color.fromARGB(255, 212, 65, 142),
+        Color.fromARGB(255, 66, 55, 143)
+    ],
+    colorStops: const <double>[0.0, 0.3, 0.8],
     blendMode: BlendMode.modulate,
     tileMode: TileMode.clamp,
     startAngle: 0,
