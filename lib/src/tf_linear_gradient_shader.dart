@@ -29,7 +29,7 @@ class TfLinearGradientShader extends TfGradientShader {
   final Offset offsetTo;
 
   @override
-  Shader getShader() {
+  Shader getShader(Rect bounds) {
     return ui.Gradient.linear(
       offsetFrom,
       offsetTo,

@@ -33,7 +33,7 @@ class TfRadialGradientShader extends TfGradientShader {
   final double focalRadius;
 
   @override
-  Shader getShader() {
+  Shader getShader(Rect bounds) {
     return ui.Gradient.radial(
       center,
       radius,

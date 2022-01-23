@@ -32,7 +32,7 @@ class TfSweepGradientShader extends TfGradientShader {
   final double endAngle;
 
   @override
-  Shader getShader() {
+  Shader getShader(Rect bounds) {
     return ui.Gradient.sweep(
       center,
       colors,
