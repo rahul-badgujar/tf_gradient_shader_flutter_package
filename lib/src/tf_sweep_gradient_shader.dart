@@ -11,7 +11,7 @@ class TfSweepGradientShader extends TfGradientShader {
     required Widget child,
     required List<Color> colors,
     required List<double> colorStops,
-    BlendMode blendMode = BlendMode.modulate,
+    BlendMode? blendMode,
     TileMode tileMode = TileMode.clamp,
     Float64List? float64list,
     required this.center,

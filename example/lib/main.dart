@@ -41,7 +41,7 @@ class Home extends StatelessWidget {
                 offsetTo: const Offset(130, 130),
                 colors: demoColors,
                 colorStops: demoColorStops,
-                blendMode: BlendMode.modulate,
+                blendMode: BlendMode.srcIn,
                 tileMode: TileMode.clamp,
               ),
               TfRadialGradientShader(
@@ -49,7 +49,7 @@ class Home extends StatelessWidget {
                 center: const Offset(80, 80),
                 colors: demoColors,
                 colorStops: demoColorStops,
-                blendMode: BlendMode.modulate,
+                blendMode: BlendMode.srcIn,
                 tileMode: TileMode.clamp,
                 radius: 80,
               ),
@@ -58,7 +58,7 @@ class Home extends StatelessWidget {
                 center: const Offset(100, 80),
                 colors: demoColors,
                 colorStops: demoColorStops,
-                blendMode: BlendMode.modulate,
+                blendMode: BlendMode.srcIn,
                 tileMode: TileMode.clamp,
                 startAngle: 0,
                 endAngle: 2 * 3.14, // 2*pi

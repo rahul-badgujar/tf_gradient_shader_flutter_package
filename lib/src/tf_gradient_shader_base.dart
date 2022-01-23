@@ -26,9 +26,8 @@ abstract class TfGradientShader extends StatelessWidget {
 
   /// The [BlendMode] to use when applying the shader to the child.
   ///
-  /// The default, [BlendMode.modulate], is useful for applying an alpha blend
-  /// to the child. Other blend modes can be used to create other effects.
-  final BlendMode blendMode;
+  /// Defaults to, [BlendMode.srcIn]
+  final BlendMode? blendMode;
 
   /// If `matrix4` is provided, the gradient fill will be transformed by the
   /// specified 4x4 matrix relative to the local coordinate system. `matrix4` must
@@ -40,7 +39,7 @@ abstract class TfGradientShader extends StatelessWidget {
     required this.child,
     required this.colors,
     required this.colorStops,
-    this.blendMode = BlendMode.modulate,
+    this.blendMode = BlendMode.srcIn,
     this.tileMode = TileMode.clamp,
     this.float64list,
   })  : assert(colors.length == colorStops.length,
@@ -50,7 +49,7 @@ abstract class TfGradientShader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ShaderMask(
-      blendMode: blendMode,
+      blendMode: blendMode ?? BlendMode.srcIn,
       shaderCallback: (Rect bounds) {
         return getShader(bounds);
       },
