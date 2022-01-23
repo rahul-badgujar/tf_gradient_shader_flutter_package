@@ -27,7 +27,7 @@ import 'package:tf_gradient_shader/tf_gradient_shader.dart';
 
 There are different widgets available to shade an underlying child widget with gradient.
 
-To apply Linear Gradient to a widget
+### **To apply Linear Gradient to a widget**
 
 ```dart
 TfLinearGradientShader(
@@ -55,7 +55,11 @@ TfLinearGradientShader(
 ),
 ```
 
-To apply Radial Gradient to a widget
+<img src="readme-assets\linear_gradient_example.png" alt="Output: TfLinearGradientShader" width="320"/>
+
+</br>
+
+### **To apply Radial Gradient to a widget**
 
 ```dart
 TfRadialGradientShader(
@@ -83,7 +87,11 @@ TfRadialGradientShader(
 ),
 ```
 
-To apply Sweep Gradient to a widget
+<img src="readme-assets\radial_gradient_example.png" alt="Output: TfRadialGradientShader" width="320"/>
+
+</br>
+
+### **To apply Sweep Gradient to a widget**
 
 ```dart
 TfSweepGradientShader(
@@ -111,3 +119,7 @@ TfSweepGradientShader(
     endAngle: 2 * math.pi,
 ),
 ```
+
+<img src="readme-assets\sweep_gradient_example.png" alt="Output: TfSweepGradientShader" width="320"/>
+
+</br>
