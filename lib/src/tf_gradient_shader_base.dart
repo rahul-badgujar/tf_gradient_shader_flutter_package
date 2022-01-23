@@ -2,6 +2,9 @@ import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 
+/// Abstract class representing Gradient Shader.
+///
+/// Gradient Shader can be used to wrap around the child widgets to shade them with gradient.
 abstract class TfGradientShader extends StatelessWidget {
   /// The underlying child widget to shade gradient on.
   final Widget child;
