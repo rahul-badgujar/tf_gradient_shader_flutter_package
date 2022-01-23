@@ -1,39 +1,71 @@
-<!-- 
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# tf_gradient_shader
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages). 
+tf_gradient_shader package provides widgets which can be used to shade underlying child widget with gradient. Support linear, radial, and sweep gradient types.
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages). 
--->
+## Supported Dart Versions
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+**Dart SDK version ">=2.15.1 <3.0.0"**
 
-## Features
+**Flutter SDK version ">=1.17.0"**
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+## Installation
 
-## Getting started
+Add the Package
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
-
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
-
-```dart
-const like = 'sample';
+```yaml
+dependencies:
+  tf_gradient_shader: ^1.0.0
 ```
 
-## Additional information
+## How to use
 
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+Import the package in your dart file
+
+```dart
+import 'package:tf_gradient_shader/tf_gradient_shader.dart';
+```
+
+There are different widgets available to shade an underlying child widget with gradient.
+
+To apply Linear Gradient to a widget
+
+```dart
+    TfLinearGradientShader(
+        child: getDemoWidgetToShade(context, "Linear Gradient Shader"),
+        offsetFrom: const Offset(0, 0),
+        offsetTo: const Offset(130, 130),
+        colors: demoColors,
+        colorStops: demoColorStops,
+        blendMode: BlendMode.modulate,
+        tileMode: TileMode.clamp,
+    ),
+```
+
+To apply Radial Gradient to a widget
+
+```dart
+    TfRadialGradientShader(
+        child: getDemoWidgetToShade(context, "Radial Gradient Shader"),
+        center: const Offset(80, 80),
+        colors: demoColors,
+        colorStops: demoColorStops,
+        blendMode: BlendMode.modulate,
+        tileMode: TileMode.clamp,
+        radius: 80,
+    ),
+```
+
+To apply Sweep Gradient to a widget
+
+```dart
+    TfSweepGradientShader(
+        child: getDemoWidgetToShade(context, "Sweep Gradient Shader"),
+        center: const Offset(100, 80),
+        colors: demoColors,
+        colorStops: demoColorStops,
+        blendMode: BlendMode.modulate,
+        tileMode: TileMode.clamp,
+        startAngle: 0,
+        endAngle: 2 * 3.14, // 2*pi
+    ),
+```
