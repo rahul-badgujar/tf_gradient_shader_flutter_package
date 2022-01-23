@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tf_gradient_shaded_widget/tf_gradient_shaded_widget.dart';
+import 'package:tf_gradient_shader/tf_gradient_shader.dart';
 
 void main(List<String> args) {
   runApp(const MyApp());
@@ -29,7 +29,7 @@ class Home extends StatelessWidget {
   }
 
   Widget buildGradientFlutterLogo() {
-    return const TfGradientShadedWidget(
+    return TfLinearGradientShader(
       child: FlutterLogo(
         size: 100,
       ),
