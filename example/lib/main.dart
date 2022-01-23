@@ -34,39 +34,41 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            TfLinearGradientShader(
-              child: getDemoWidgetToShade(context, "Linear Gradient Shader"),
-              offsetFrom: const Offset(0, 0),
-              offsetTo: const Offset(0, 0),
-              colors: demoColors,
-              colorStops: demoColorStops,
-              blendMode: BlendMode.modulate,
-              tileMode: TileMode.clamp,
-            ),
-            TfRadialGradientShader(
-              child: getDemoWidgetToShade(context, "Radial Gradient Shader"),
-              center: const Offset(0, 0),
-              colors: demoColors,
-              colorStops: demoColorStops,
-              blendMode: BlendMode.modulate,
-              tileMode: TileMode.clamp,
-              radius: 16,
-            ),
-            TfSweepGradientShader(
-              child: getDemoWidgetToShade(context, "Sweep Gradient Shader"),
-              center: const Offset(0, 0),
-              colors: demoColors,
-              colorStops: demoColorStops,
-              blendMode: BlendMode.modulate,
-              tileMode: TileMode.clamp,
-              startAngle: 0,
-              endAngle: 2 * 3.14, // 2*pi
-            ),
-          ],
+      body: SafeArea(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              TfLinearGradientShader(
+                child: getDemoWidgetToShade(context, "Linear Gradient Shader"),
+                offsetFrom: const Offset(0, 0),
+                offsetTo: const Offset(130, 130),
+                colors: demoColors,
+                colorStops: demoColorStops,
+                blendMode: BlendMode.modulate,
+                tileMode: TileMode.clamp,
+              ),
+              TfRadialGradientShader(
+                child: getDemoWidgetToShade(context, "Radial Gradient Shader"),
+                center: const Offset(80, 80),
+                colors: demoColors,
+                colorStops: demoColorStops,
+                blendMode: BlendMode.modulate,
+                tileMode: TileMode.clamp,
+                radius: 80,
+              ),
+              TfSweepGradientShader(
+                child: getDemoWidgetToShade(context, "Sweep Gradient Shader"),
+                center: const Offset(100, 80),
+                colors: demoColors,
+                colorStops: demoColorStops,
+                blendMode: BlendMode.modulate,
+                tileMode: TileMode.clamp,
+                startAngle: 0,
+                endAngle: 2 * 3.14, // 2*pi
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -75,10 +77,17 @@ class Home extends StatelessWidget {
   Widget getDemoWidgetToShade(BuildContext context, String label) {
     return Column(
       children: [
-        const FlutterLogo(
-          size: 100,
+        const CircleAvatar(
+          radius: 80,
         ),
-        Text(label)
+        const SizedBox(height: 8),
+        Text(
+          label,
+          style: const TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 16,
+          ),
+        )
       ],
     );
   }
