@@ -19,34 +19,67 @@ class MyApp extends StatelessWidget {
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
 
+  final demoColors = const <Color>[
+    Color.fromARGB(255, 245, 56, 68),
+    Color.fromARGB(255, 212, 65, 142),
+    Color.fromARGB(255, 66, 55, 143)
+  ];
+
+  final demoColorStops = const <double>[
+    0.0,
+    0.3,
+    0.8,
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: buildGradientFlutterLogo(),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            TfLinearGradientShader(
+              child: getDemoWidgetToShade(context, "Linear Gradient Shader"),
+              offsetFrom: const Offset(0, 0),
+              offsetTo: const Offset(0, 0),
+              colors: demoColors,
+              colorStops: demoColorStops,
+              blendMode: BlendMode.modulate,
+              tileMode: TileMode.clamp,
+            ),
+            TfRadialGradientShader(
+              child: getDemoWidgetToShade(context, "Radial Gradient Shader"),
+              center: const Offset(0, 0),
+              colors: demoColors,
+              colorStops: demoColorStops,
+              blendMode: BlendMode.modulate,
+              tileMode: TileMode.clamp,
+              radius: 16,
+            ),
+            TfSweepGradientShader(
+              child: getDemoWidgetToShade(context, "Sweep Gradient Shader"),
+              center: const Offset(0, 0),
+              colors: demoColors,
+              colorStops: demoColorStops,
+              blendMode: BlendMode.modulate,
+              tileMode: TileMode.clamp,
+              startAngle: 0,
+              endAngle: 2 * 3.14, // 2*pi
+            ),
+          ],
+        ),
       ),
     );
   }
 
-  Widget buildGradientFlutterLogo() {
-    return TfLinearGradientShader(
-      child: FlutterLogo(
-        size: 100,
-      ),
-      offsetFrom: Offset(0, 24),
-      offsetTo: Offset(24, 0),
-      colors: [
-        Color.fromARGB(255, 245, 56, 68),
-        Color.fromARGB(255, 212, 65, 142),
-        Color.fromARGB(255, 66, 55, 143)
+  Widget getDemoWidgetToShade(BuildContext context, String label) {
+    return Column(
+      children: [
+        const FlutterLogo(
+          size: 100,
+        ),
+        Text(label)
       ],
-      colorStops: [
-        0.0,
-        0.3,
-        0.8,
-      ],
-      blendMode: BlendMode.modulate,
-      tileMode: TileMode.clamp,
     );
   }
 }
