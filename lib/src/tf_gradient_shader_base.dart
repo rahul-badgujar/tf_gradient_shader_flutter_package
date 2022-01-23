@@ -1,3 +1,5 @@
+import 'dart:typed_data';
+
 import 'package:flutter/material.dart';
 
 abstract class TfGradientShader extends StatelessWidget {
@@ -6,6 +8,7 @@ abstract class TfGradientShader extends StatelessWidget {
   final List<Color> colors;
   final List<double> colorStops;
   final BlendMode blendMode;
+  final Float64List? float64list;
 
   const TfGradientShader({
     Key? key,
@@ -14,6 +17,7 @@ abstract class TfGradientShader extends StatelessWidget {
     required this.colorStops,
     this.blendMode = BlendMode.modulate,
     this.tileMode = TileMode.clamp,
+    this.float64list,
   })  : assert(colors.length == colorStops.length,
             'Length of colors list and colorStops list must be equal.'),
         super(key: key);

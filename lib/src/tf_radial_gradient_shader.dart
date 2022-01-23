@@ -4,8 +4,8 @@ import 'package:flutter/widgets.dart';
 import 'dart:ui' as ui;
 import '../tf_gradient_shader.dart';
 
-class TfLinearGradientShader extends TfGradientShader {
-  const TfLinearGradientShader({
+class TfRadialGradientShader extends TfGradientShader {
+  const TfRadialGradientShader({
     Key? key,
     required Widget child,
     required List<Color> colors,
@@ -13,8 +13,10 @@ class TfLinearGradientShader extends TfGradientShader {
     BlendMode blendMode = BlendMode.modulate,
     TileMode tileMode = TileMode.clamp,
     Float64List? float64list,
-    required this.offsetFrom,
-    required this.offsetTo,
+    required this.center,
+    required this.radius,
+    this.focal,
+    this.focalRadius = 0.0,
   }) : super(
           key: key,
           child: child,
@@ -25,18 +27,22 @@ class TfLinearGradientShader extends TfGradientShader {
           float64list: float64list,
         );
 
-  final Offset offsetFrom;
-  final Offset offsetTo;
+  final Offset center;
+  final double radius;
+  final Offset? focal;
+  final double focalRadius;
 
   @override
   Shader getShader() {
-    return ui.Gradient.linear(
-      offsetFrom,
-      offsetTo,
+    return ui.Gradient.radial(
+      center,
+      radius,
       colors,
       colorStops,
       tileMode,
       float64list,
+      focal,
+      focalRadius,
     );
   }
 }
