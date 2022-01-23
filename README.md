@@ -30,42 +30,84 @@ There are different widgets available to shade an underlying child widget with g
 To apply Linear Gradient to a widget
 
 ```dart
-    TfLinearGradientShader(
-        child: getDemoWidgetToShade(context, "Linear Gradient Shader"),
-        offsetFrom: const Offset(0, 0),
-        offsetTo: const Offset(130, 130),
-        colors: demoColors,
-        colorStops: demoColorStops,
-        blendMode: BlendMode.modulate,
-        tileMode: TileMode.clamp,
+TfLinearGradientShader(
+    child: Column(
+      children: [
+        const CircleAvatar(
+          radius: 80,
+        ),
+        const SizedBox(height: 8),
+        Text(
+          "Linear Gradient Shader",
+          style: const TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 16,
+          ),
+        )
+      ],
     ),
+    offsetFrom: const Offset(0, 0),
+    offsetTo: const Offset(130, 130),
+    colors: demoColors,
+    colorStops: demoColorStops,
+    blendMode: BlendMode.modulate,
+    tileMode: TileMode.clamp,
+),
 ```
 
 To apply Radial Gradient to a widget
 
 ```dart
-    TfRadialGradientShader(
-        child: getDemoWidgetToShade(context, "Radial Gradient Shader"),
-        center: const Offset(80, 80),
-        colors: demoColors,
-        colorStops: demoColorStops,
-        blendMode: BlendMode.modulate,
-        tileMode: TileMode.clamp,
-        radius: 80,
+TfRadialGradientShader(
+    child: Column(
+      children: [
+        const CircleAvatar(
+          radius: 80,
+        ),
+        const SizedBox(height: 8),
+        Text(
+          "Radial Gradient Shader",
+          style: const TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 16,
+          ),
+        )
+      ],
     ),
+    center: const Offset(80, 80),
+    colors: demoColors,
+    colorStops: demoColorStops,
+    blendMode: BlendMode.modulate,
+    tileMode: TileMode.clamp,
+    radius: 80,
+),
 ```
 
 To apply Sweep Gradient to a widget
 
 ```dart
-    TfSweepGradientShader(
-        child: getDemoWidgetToShade(context, "Sweep Gradient Shader"),
-        center: const Offset(100, 80),
-        colors: demoColors,
-        colorStops: demoColorStops,
-        blendMode: BlendMode.modulate,
-        tileMode: TileMode.clamp,
-        startAngle: 0,
-        endAngle: 2 * 3.14, // 2*pi
+TfSweepGradientShader(
+    child: Column(
+      children: [
+        const CircleAvatar(
+          radius: 80,
+        ),
+        const SizedBox(height: 8),
+        Text(
+          "Sweep Gradient Shader",
+          style: const TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 16,
+          ),
+        )
+      ],
     ),
+    center: const Offset(100, 80),
+    colors: demoColors,
+    colorStops: demoColorStops,
+    blendMode: BlendMode.modulate,
+    tileMode: TileMode.clamp,
+    startAngle: 0,
+    endAngle: 2 * math.pi,
+),
 ```
