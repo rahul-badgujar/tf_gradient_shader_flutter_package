@@ -5,7 +5,7 @@ import 'dart:ui' as ui;
 import '../tf_gradient_shader.dart';
 
 class TfLinearGradientShader extends TfGradientShader {
-  /// Shades the underlying child widget with Linear Gradient.
+  /// Shades the underlying `child` widget with Linear Gradient.
   ///
   /// Creates a linear gradient from `from` to `to`.
   ///
@@ -52,7 +52,10 @@ class TfLinearGradientShader extends TfGradientShader {
           float64list: float64list,
         );
 
+  /// Specify offset to start gradient from.
   final Offset offsetFrom;
+
+  /// Specify offset to end gradient to.
   final Offset offsetTo;
 
   @override

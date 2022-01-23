@@ -5,7 +5,7 @@ import 'dart:ui' as ui;
 import '../tf_gradient_shader.dart';
 
 class TfRadialGradientShader extends TfGradientShader {
-  /// Shades the underlying child widget with Radial Gradient.
+  /// Shades the underlying `child` widget with Radial Gradient.
   ///
   /// Creates a radial gradient centered at `center` that ends at `radius`
   /// distance from the center.
@@ -62,9 +62,26 @@ class TfRadialGradientShader extends TfGradientShader {
           float64list: float64list,
         );
 
+  /// Specify center of radial gradient.
   final Offset center;
+
+  /// Radius of radial gradient.
   final double radius;
+
+  /// If `focal` is provided and not equal to `center` and `focalRadius` is
+  /// provided and not equal to 0.0, the generated shader will be a two point
+  /// conical radial gradient, with `focal` being the center of the focal
+  /// circle and `focalRadius` being the radius of that circle. If `focal` is
+  /// provided and not equal to `center`, at least one of the two offsets must
+  /// not be equal to [Offset.zero].
   final Offset? focal;
+
+  /// If `focal` is provided and not equal to `center` and `focalRadius` is
+  /// provided and not equal to 0.0, the generated shader will be a two point
+  /// conical radial gradient, with `focal` being the center of the focal
+  /// circle and `focalRadius` being the radius of that circle. If `focal` is
+  /// provided and not equal to `center`, at least one of the two offsets must
+  /// not be equal to [Offset.zero].
   final double focalRadius;
 
   @override

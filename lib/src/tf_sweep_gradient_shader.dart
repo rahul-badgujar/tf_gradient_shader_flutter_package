@@ -6,7 +6,7 @@ import '../tf_gradient_shader.dart';
 import 'dart:math' as math;
 
 class TfSweepGradientShader extends TfGradientShader {
-  /// Shades the underlying child widget with Sweep Gradient.
+  /// Shades the underlying `child` widget with Sweep Gradient.
   ///
   /// Creates a sweep gradient centered at `center` that starts at `startAngle`
   /// and ends at `endAngle`.
@@ -59,8 +59,13 @@ class TfSweepGradientShader extends TfGradientShader {
           float64list: float64list,
         );
 
+  /// Specify center of sweep gradient.
   final Offset center;
+
+  /// Angle (in Radians) to start gradient drawing from.
   final double startAngle;
+
+  /// Angle (in Radians) to end gradient drawing to.
   final double endAngle;
 
   @override
